@@ -44,6 +44,7 @@ public class cliente {
 			param.setExtraElement(AXIOMUtil.stringToOM(xml));
 			manunt.setCccDadosMsgDownload(param);
 			
+			// resposta da solicitação
 			SVManutencaoStub.CSCManutResponse resposta= new SVManutencaoStub().cSCManut(manunt);
 			String stRespost = resposta.getCSCManutResult().getExtraElement().toString();
 			System.out.println(stRespost);
