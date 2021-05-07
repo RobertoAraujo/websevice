@@ -29,7 +29,7 @@ public class cliente {
 		Util util = new Util();
 		String xml = util.marshal(man);
 		
-		
+		// configuraçãodo Properties
 		try {
 			SetConfig.getProperties();
 			SetConfig.getSSL();
