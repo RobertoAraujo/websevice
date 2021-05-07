@@ -2,23 +2,23 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2021.04.23 às 04:30:04 PM COT 
+// Gerado em: 2021.05.07 às 10:25:18 AM COT 
 //
 
 
-package br.gov.ac.sefaz.wsdl;
+package br.gov.ac.sefaz.xsd;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de TUfEmi.
+ * <p>Classe Java de TUf.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * <p>
  * <pre>
- * &lt;simpleType name="TUfEmi">
+ * &lt;simpleType name="TUf">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;whiteSpace value="preserve"/>
  *     &lt;enumeration value="AC"/>
@@ -48,14 +48,15 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="SE"/>
  *     &lt;enumeration value="SP"/>
  *     &lt;enumeration value="TO"/>
+ *     &lt;enumeration value="EX"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "TUfEmi")
+@XmlType(name = "TUf")
 @XmlEnum
-public enum TUfEmi {
+public enum TUf {
 
     AC,
     AL,
@@ -83,13 +84,14 @@ public enum TUfEmi {
     SC,
     SE,
     SP,
-    TO;
+    TO,
+    EX;
 
     public String value() {
         return name();
     }
 
-    public static TUfEmi fromValue(String v) {
+    public static TUf fromValue(String v) {
         return valueOf(v);
     }
 

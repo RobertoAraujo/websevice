@@ -2,8 +2,8 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2021.04.23 às 04:30:04 PM COT 
+// Gerado em: 2021.05.07 às 10:25:18 AM COT 
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.portalfiscal.inf.br/nfe", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package br.gov.ac.sefaz.wsdl;
+package br.gov.ac.sefaz.xsd;

@@ -2,14 +2,12 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2021.04.23 às 04:30:04 PM COT 
+// Gerado em: 2021.05.07 às 10:25:18 AM COT 
 //
 
 
-package br.gov.ac.sefaz.wsdl;
+package br.gov.ac.sefaz.xsd;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -18,17 +16,18 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * Schema XML de validação da área de dados da mensagem de manutenção do CSC. 
+ *  Schema XML de validação da área de dados da mensagem de retorno do pedido de manutenção do CSC.
  * 
- * <p>Classe Java de TCSCMan complex type.
+ * <p>Classe Java de TRetCSCMan complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="TCSCMan">
+ * &lt;complexType name="TRetCSCMan">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -38,10 +37,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="mod" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="CNPJ" type="{http://www.portalfiscal.inf.br/nfe}TCnpj"/>
  *         &lt;element name="tpAcao" type="{http://www.portalfiscal.inf.br/nfe}TTpAcao"/>
- *         &lt;choice>
- *           &lt;element name="infAcao" type="{http://www.portalfiscal.inf.br/nfe}TInfAcao" minOccurs="0"/>
- *           &lt;element name="infCarga" type="{http://www.portalfiscal.inf.br/nfe}TInfCarga" maxOccurs="100" minOccurs="0"/>
- *         &lt;/choice>
+ *         &lt;element name="cStat" type="{http://www.portalfiscal.inf.br/nfe}TStatExtendido"/>
+ *         &lt;element name="xMotivo" type="{http://www.portalfiscal.inf.br/nfe}TMotivo"/>
+ *         &lt;element name="dhResp" type="{http://www.portalfiscal.inf.br/nfe}TDataHoraUTC"/>
+ *         &lt;element name="protSV" type="{http://www.portalfiscal.inf.br/nfe}TProtSV"/>
+ *         &lt;element name="infCSC" type="{http://www.portalfiscal.inf.br/nfe}TInfCSC"/>
  *       &lt;/sequence>
  *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerDFe" />
  *     &lt;/restriction>
@@ -52,17 +52,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TCSCMan", propOrder = {
+@XmlType(name = "TRetCSCMan", propOrder = {
     "tpAmb",
     "verAplic",
     "cuf",
     "mod",
     "cnpj",
     "tpAcao",
-    "infAcao",
-    "infCarga"
+    "cStat",
+    "xMotivo",
+    "dhResp",
+    "protSV",
+    "infCSC"
 })
-public class TCSCMan {
+public class TRetCSCMan {
 
     @XmlElement(required = true)
     protected String tpAmb;
@@ -76,8 +79,17 @@ public class TCSCMan {
     protected String cnpj;
     @XmlSchemaType(name = "unsignedInt")
     protected long tpAcao;
-    protected TInfAcao infAcao;
-    protected List<TInfCarga> infCarga;
+    @XmlElement(required = true)
+    protected String cStat;
+    @XmlElement(required = true)
+    protected String xMotivo;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar dhResp;
+    @XmlElement(required = true)
+    protected String protSV;
+    @XmlElement(required = true)
+    protected TInfCSC infCSC;
     @XmlAttribute(name = "versao", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String versao;
@@ -219,56 +231,123 @@ public class TCSCMan {
     }
 
     /**
-     * Obtém o valor da propriedade infAcao.
+     * Obtém o valor da propriedade cStat.
      * 
      * @return
      *     possible object is
-     *     {@link TInfAcao }
+     *     {@link String }
      *     
      */
-    public TInfAcao getInfAcao() {
-        return infAcao;
+    public String getCStat() {
+        return cStat;
     }
 
     /**
-     * Define o valor da propriedade infAcao.
+     * Define o valor da propriedade cStat.
      * 
      * @param value
      *     allowed object is
-     *     {@link TInfAcao }
+     *     {@link String }
      *     
      */
-    public void setInfAcao(TInfAcao value) {
-        this.infAcao = value;
+    public void setCStat(String value) {
+        this.cStat = value;
     }
 
     /**
-     * Gets the value of the infCarga property.
+     * Obtém o valor da propriedade xMotivo.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the infCarga property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInfCarga().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link TInfCarga }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public List<TInfCarga> getInfCarga() {
-        if (infCarga == null) {
-            infCarga = new ArrayList<TInfCarga>();
-        }
-        return this.infCarga;
+    public String getXMotivo() {
+        return xMotivo;
+    }
+
+    /**
+     * Define o valor da propriedade xMotivo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setXMotivo(String value) {
+        this.xMotivo = value;
+    }
+
+    /**
+     * Obtém o valor da propriedade dhResp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDhResp() {
+        return dhResp;
+    }
+
+    /**
+     * Define o valor da propriedade dhResp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDhResp(XMLGregorianCalendar value) {
+        this.dhResp = value;
+    }
+
+    /**
+     * Obtém o valor da propriedade protSV.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getProtSV() {
+        return protSV;
+    }
+
+    /**
+     * Define o valor da propriedade protSV.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setProtSV(String value) {
+        this.protSV = value;
+    }
+
+    /**
+     * Obtém o valor da propriedade infCSC.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TInfCSC }
+     *     
+     */
+    public TInfCSC getInfCSC() {
+        return infCSC;
+    }
+
+    /**
+     * Define o valor da propriedade infCSC.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TInfCSC }
+     *     
+     */
+    public void setInfCSC(TInfCSC value) {
+        this.infCSC = value;
     }
 
     /**
