@@ -38,13 +38,10 @@ public class cliente {
 		}		
 
 		try {
+			// envia um solicitação
 			SVManutencaoStub.CSCManut manunt= new SVManutencaoStub.CSCManut();
-			
-			//gera um xml com a classe util
 			CccDadosMsgDownload_type0 param = new CccDadosMsgDownload_type0();
-			
 			param.setExtraElement(AXIOMUtil.stringToOM(xml));
-			
 			manunt.setCccDadosMsgDownload(param);
 			
 			SVManutencaoStub.CSCManutResponse resposta= new SVManutencaoStub().cSCManut(manunt);
