@@ -50,10 +50,13 @@ public class cliente {
 			System.out.println(stRespost);
 			System.out.println("foi !!!");
 		} catch (AxisFault e) {
+			System.out.println("Erro !");
 			e.printStackTrace();
 		} catch (RemoteException e) {
+			System.out.println("Erro !!");
 			e.printStackTrace();
 		} catch (XMLStreamException e) {
+			System.out.println("Erro !!!");
 			e.printStackTrace();
 		}
 	}
