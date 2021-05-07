@@ -16,7 +16,7 @@ import br.gov.ac.sefaz.xsd.TCSCMan;
 public class cliente {
 
 	public static void main(String[] args) {
-		// xml
+		// instanciação da clase CSCMan setando os valores 
 		TCSCMan man = new TCSCMan();		
 		man.setCNPJ("04034484000140");
 		man.setCUF("12");
